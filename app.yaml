@@ -2,8 +2,10 @@ command:
   - streamlit
   - run
   - demo_streamlit/app.py
-  - --server.port=8501
-  - --server.address=0.0.0.0
-  - --server.headless=true
-  - --server.enableCORS=false
-  - --server.enableXsrfProtection=false
+
+env:
+  - name: UC_TABLE_NAME
+    valueFrom: "ml_prod_dev.ds_team.gold_nbc_test_dataset_with_embeddings"
+  
+  - name: DATABRICKS_WAREHOUSE_ID
+    valueFrom: "151258857980e19b"

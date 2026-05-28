@@ -1,2 +1,6 @@
 numpy>=1.24.0
+pyspark>=3.5.0
 streamlit>=1.35.0
+databricks-sdk
+databricks-sql-connector
+databricks-connect==15.4.*

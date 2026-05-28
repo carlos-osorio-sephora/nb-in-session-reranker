@@ -1,0 +1,28 @@
+# This is a Databricks asset bundle definition for sephora-clickstream-analysis.
+# The Databricks extension requires databricks.yml configuration file.
+# See https://docs.databricks.com/dev-tools/bundles/index.html for documentation.
+
+bundle:
+  name: sephora-clickstream-analysis
+
+resources:
+  apps:
+    nbc-demo:
+      name: nbc-demo
+      description: "NBC Interactive Demo — real-time banner re-ranking from clickstream signals"
+      source_code_path: .
+
+targets:
+  dev:
+    mode: development
+    default: true
+    workspace:
+      host: https://adb-8248746818676744.4.azuredatabricks.net
+
+  prod:
+    workspace:
+      host: https://adb-8248746818676744.4.azuredatabricks.net
+    resources:
+      apps:
+        nbc-demo:
+          name: nbc-demo-prod
